@@ -33,10 +33,12 @@ const handleSubmit= (e)=>{
         setWord('')
         setMul(mul+1)
         stack>1&&setStack(stack-1)
+        audioCorrect.currentTime=0
         audioCorrect.play()
         
     }
     else{
+        audioWrong.currentTime=0
         audioWrong.play()
     }
     setWord('')
@@ -71,7 +73,7 @@ useEffect(() => {
     
   }
   
-  level<3&&setLevel(parseInt(1+mul/3))
+  level<4&&setLevel(parseInt(1+mul/3))
 
 }, [words, stack, page])
 

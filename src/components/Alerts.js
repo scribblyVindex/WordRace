@@ -38,8 +38,12 @@ const Alerts = (props) => {
             </>:<>
             <div className=' text-center row-span-1 row-start-1 text-2xl text-blue-600 font-semibold '>{props.text.toUpperCase() + '!'}
             </div>
-            <button className=' h-12 w-3/4 mt-4 bg-blue-600 text-white py-2  mx-4   text-center font-semibold px-2 pt-2 shadow-md border-blue-700 shadow-gray-400  text-2xl ' onClick={e=>{ navigate('/');setText('')}}>Back to HomePage</button>
-            <button className=' h-12 w-3/4 mt-4 bg-blue-600 text-white py-2  mx-4   text-center font-semibold px-2 pt-2 shadow-md border-blue-700 shadow-gray-400  text-2xl ' onClick={e=>{setText('')}}>Close</button>
+            
+            {text!=='gameOver'?<><button className=' h-12 w-3/4 mt-4 bg-blue-600 text-white py-2  mx-4   text-center font-semibold px-2 pt-2 shadow-md border-blue-700 shadow-gray-400  text-2xl ' onClick={e=>{ navigate('/');setText('')}}>Back to HomePage</button>
+            <button className=' h-12 w-3/4 mt-4 bg-blue-600 text-white py-2  mx-4   text-center font-semibold px-2 pt-2 shadow-md border-blue-700 shadow-gray-400  text-2xl ' onClick={e=>{setText('')}}>Close</button></>:
+             <><p className='text-center  text-xl text-blue-600 font-semibold ' >You can either restart the game or go back to the home page.</p>
+            <button className=' h-12 w-3/4 mt-4 bg-blue-600 text-white py-2  mx-4   text-center font-semibold px-2 pt-2 shadow-md border-blue-700 shadow-gray-400  text-2xl ' onClick={e=>{ navigate('/');setText('')}}>Back to HomePage</button></>
+            }
             
             </>
 
